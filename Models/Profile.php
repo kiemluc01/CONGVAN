@@ -11,4 +11,26 @@ class Profile extends Database{
         echo '<script>alert("có lỗi")</script>';
         return False;
     }
+    function getName(){
+        $sql = "select * from users where name = '".$_COOKIE['user']."'";
+        $name = "Lỗi tề";
+        $result = mysqli_query($this->conn,$sql);
+        if(mysqli_num_rows($result)>0){
+            while($row = mysqli_fetch_assoc($result)){
+                $name = $row['hoten'];
+            }
+        }
+        return $name;
+    }
+    function getEmail(){
+        $sql = "select * from users where name = '".$_COOKIE['user']."'";
+        $name = "Lỗi tề";
+        $result = mysqli_query($this->conn,$sql);
+        if(mysqli_num_rows($result)>0){
+            while($row = mysqli_fetch_assoc($result)){
+                $name = $row['email'];
+            }
+        }
+        return $name;
+    }
 }

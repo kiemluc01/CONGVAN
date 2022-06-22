@@ -46,7 +46,9 @@
 </head>
 
 <body>
-<?php if(isset($_REQUEST['option'])){
+<?php
+$profile = loadModel('Profile'); 
+if(isset($_REQUEST['option'])){
     if(((String) $_REQUEST['option']) != "register"){
       ?>
 <div class="layout-wrapper layout-content-navbar">
@@ -55,7 +57,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href=".?option=home" class="app-brand-link">
+            <a href=".?option=vanthu" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -123,36 +125,24 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item" id="home">
               <a href=".?option=vanthu" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Trang chủ</div>
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div data-i18n="Layouts">Trang chủ</div>
               </a>
             </li>
 
             <!-- Layouts -->
-            <li class="menu-item">
-              <a href=".?option=vanthu&sub_option=products" class="menu-link">
+            <li class="menu-item" id="vanthudi">
+              <a href=".?option=vanthudi" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Quản lí sản phẩm</div>
+                <div data-i18n="Layouts">Quản lí văn thư đi</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href=".?option=vanthu&sub_option=customers" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Layouts">Quản lí Khách hàng</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href=".?option=vanthu&sub_option=demand" class="menu-link">
+            <li class="menu-item" id="vanthuden">
+              <a href=".?option=vanthuden" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Quản lí nhu cầu</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href=".?option=vanthu&sub_option=works" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Quản lí công việc</div>
+                <div data-i18n="Layouts">Tiếp nhận văn thư đến</div>
               </a>
             </li>
           </ul>
@@ -208,8 +198,8 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block"><?php echo $profile->getName(); ?></span>
+                            <small class="text-muted"><?php echo $profile->getEmail(); ?></small>
                           </div>
                         </div>
                       </a>

@@ -14,7 +14,8 @@ if(isset($_REQUEST['luu'])){
     $email =  $_REQUEST['email'];
     $sdt =  $_REQUEST['sdt'];
     if($profile->update($name,$hoten,$gt,$ns,$email,$sdt)){
-        echo '<script>alert("lưu thành công")</script>';
+        echo '<script>alert("lưu thành công")
+        </script>';
     }
 }
 
