@@ -74,7 +74,7 @@ if(mysqli_num_rows($result)>0){
                             <label class="form-label" for="basic-icon-default-company">Giới tính</label>
                             <div class="input-group input-group-merge">
                             <span id="basic-icon-default-company2" class="input-group-text"
-                                ><i class="bx bx-buildings"></i
+                                ><i class="bx bx-male"></i
                             ></span>
                             <input
                                 type="text"
@@ -92,7 +92,7 @@ if(mysqli_num_rows($result)>0){
                             <label class="form-label" for="basic-icon-default-company">Ngày sinh</label>
                             <div class="input-group input-group-merge">
                             <span id="basic-icon-default-company2" class="input-group-text"
-                                ><i class="bx bx-buildings"></i
+                                ><i class="bx bx-time"></i
                             ></span>
                             <input
                                 type="text"

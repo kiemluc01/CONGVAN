@@ -6,6 +6,13 @@
         </script>';
     }
 ?>
+<div class="container-xxl flex-grow-1 container-p-y" style="width:98%!important;">
+    <div class="row">
+        <div class="card">
+            
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script>
