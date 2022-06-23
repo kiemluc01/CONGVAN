@@ -18,7 +18,7 @@
         $vbd = loadModel('Vanbanden');
         if(move_uploaded_file($f,$f_path))
             if($vbd->insert($f_path,$sh,$nn,$nv,$lvb,$dvhc)){
-                echo '<script>alert("lưu thành công")</script>';
+                echo '<script>alert("lưu thành công\n file được lưu trong Public/files")</script>';
             }
     }
 ?>
