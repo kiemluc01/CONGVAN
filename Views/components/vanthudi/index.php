@@ -9,7 +9,79 @@
 <div class="container-xxl flex-grow-1 container-p-y" style="width:98%!important;">
     <div class="row">
         <div class="card">
-            
+            <h3 class="card-header">Tiếp nhận văn bản đến</h3>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="inputGroupFile04"
+                            name="fileupload"
+                            aria-describedby="inputGroupFileAddon04"
+                            aria-label="Upload"
+                        />
+                    </div>
+                    <div style="display:flex;  width:90%;justify-content: space-between;padding-top:10px;">
+                        <div class="mb-3" style="width:45%!important;">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Nhân viên đăng kí</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nv" id="basic-default-name" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="mb-3" style="width:45%!important;">
+                            <label for="defaultSelect" class="form-label">Đơn vị hành  chính</label>
+                            <select id="defaultSelect" name="dvhc" class="form-select">
+                                <?php 
+                                    $r_donvi = $donvi->get();
+                                    if(mysqli_num_rows($r_donvi)>0){
+                                        while($rowdv = mysqli_fetch_assoc($r_donvi)){
+                                            ?>
+                                            <option value="<?php echo $rowdv['maLoaiDV'] ?>"><?php echo $rowdv['tenLoaiDV'] ?></option>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display:flex;  width:90%;justify-content: space-between;padding-top:10px;">
+                        <div class="mb-3" style="width:45%!important;">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Ngày nhận</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ngaynhan" id="basic-default-name" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="mb-3" style="width:45%!important;">
+                            <label for="defaultSelect" class="form-label">Loại văn bản</label>
+                            <select id="defaultSelect" name="lvb" class="form-select">
+                                <?php 
+                                    $r_vanban = $vanban->get();
+                                    if(mysqli_num_rows($r_donvi)>0){
+                                        while($rowvb = mysqli_fetch_assoc($r_vanban)){
+                                            ?>
+                                            <option value="<?php echo $rowvb['maLoaiVB'] ?>"><?php echo $rowvb['tenLoaiVB'] ?></option>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display:flex;  width:90%;justify-content: space-between;padding-top:10px;">
+                        <div class="mb-3" style="width:45%!important;">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">số hiệu</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="sh" id="basic-default-name" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Đăng ký" name="submit"  class="btn btn-primary">
+                </form>
+            </div>
         </div>
     </div>
 </div>
