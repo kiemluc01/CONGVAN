@@ -55,7 +55,7 @@
                                     if(mysqli_num_rows($r_donvi)>0){
                                         while($rowdv = mysqli_fetch_assoc($r_donvi)){
                                             ?>
-                                            <option value="<?php echo $rowdv['maLoaiDV'] ?>"><?php echo $rowdv['tenLoaiDV'] ?></option>
+                                            <option value="<?php echo $rowdv['maDonVi'] ?>"><?php echo $rowdv['tenDonVi'] ?></option>
                                             <?php
                                         }
                                     }
